@@ -1,4 +1,6 @@
 package com.example.debug.small;
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
@@ -24,25 +26,36 @@ public class MainActivity extends AppCompatActivity {
     private com.example.debug.small.fragments.ThreeFragment threeFragment;
     private com.example.debug.small.fragments.FourFragment fourFragment;
     private ArrayList<Fragment> fragments;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor editor;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        initView();
-        homeFragment=new com.example.debug.small.fragments.HomeFragment();
-        twoFragment=new com.example.debug.small.fragments.TwoFragment();
-        threeFragment=new com.example.debug.small.fragments.ThreeFragment();
-        fourFragment=new com.example.debug.small.fragments.FourFragment();
-        fragments = new ArrayList<Fragment>();
-        fragments.add(homeFragment);
-        fragments.add(twoFragment);
-        fragments.add(threeFragment);
-        fragments.add(fourFragment);
-        ViewPagerAdapter adapter=new ViewPagerAdapter(getSupportFragmentManager(),fragments);
-        mVp.setAdapter(adapter);
-        mTabBar.setContainer(mVp);
+        sharedPreferences=this.getSharedPreferences("checked",MODE_PRIVATE);
+        boolean firstload=sharedPreferences.getBoolean("firstload",true);
+        if(firstload){
+            Intent intent =new Intent();
+            intent.setClass(this,GuideActivity.class);
+            startActivity(intent);
+        }else {
+            setContentView(R.layout.activity_main);
+            initView();
+            homeFragment = new com.example.debug.small.fragments.HomeFragment();
+            twoFragment = new com.example.debug.small.fragments.TwoFragment();
+            threeFragment = new com.example.debug.small.fragments.ThreeFragment();
+            fourFragment = new com.example.debug.small.fragments.FourFragment();
+            fragments = new ArrayList<Fragment>();
+            fragments.add(homeFragment);
+            fragments.add(twoFragment);
+            fragments.add(threeFragment);
+            fragments.add(fourFragment);
+            ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), fragments);
+            mVp.setAdapter(adapter);
+            mTabBar.setContainer(mVp);
+        }
     }
     private void initView(){
+
         mVp = findViewById(R.id.vp);
         mTabBar = findViewById(R.id.tabbar);
     }
