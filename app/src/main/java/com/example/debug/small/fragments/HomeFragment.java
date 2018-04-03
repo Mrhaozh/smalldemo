@@ -8,14 +8,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.Toast;
-
 import com.baoyz.swipemenulistview.SwipeMenu;
 import com.baoyz.swipemenulistview.SwipeMenuCreator;
 import com.baoyz.swipemenulistview.SwipeMenuItem;
 import com.baoyz.swipemenulistview.SwipeMenuListView;
-import com.bumptech.glide.Glide;
 import com.example.debug.small.R;
 import com.example.debug.small.adapter.Goodsadapter;
 import com.example.debug.small.bean.Goodsbean;
@@ -30,12 +27,10 @@ import com.scwang.smartrefresh.layout.footer.BallPulseFooter;
 import com.scwang.smartrefresh.layout.listener.OnLoadmoreListener;
 import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.youth.banner.Banner;
-
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 import org.xutils.x;
-
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
@@ -256,4 +251,5 @@ public class HomeFragment extends android.support.v4.app.Fragment{
         super.onStop();
         EventBus.getDefault().unregister(this);
     }
+
 }

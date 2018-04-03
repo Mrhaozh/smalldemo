@@ -19,6 +19,8 @@ import com.example.debug.small.guideview.LastImgFragment;
 import com.example.debug.small.guideview.SecondImgFragment;
 import com.example.debug.small.guideview.ViewpageAdapter;
 
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 /**
@@ -134,4 +136,5 @@ public class GuideActivity extends AppCompatActivity implements ViewPager.OnPage
                 break;
         }
     }
+
 }

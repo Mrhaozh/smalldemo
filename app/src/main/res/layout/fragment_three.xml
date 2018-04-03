@@ -1,12 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:ignoreGravity="@+id/hello"
+   >
+
     <TextView
-        android:gravity="center"
+        android:id="@+id/hello"
         android:textSize="26sp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="第三个fragment"/>
-</FrameLayout>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="第三个fragment"
+        />
+
+</RelativeLayout>
