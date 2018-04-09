@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">侧滑</string>
+    <string name="next_one">下一个</string>
+    <string name="previous_one">上一个</string>
+    <string name="drawer_open">抽屉打开</string>
+    <string name="drawer_close">抽屉关闭</string>
+    <string name="tip">侧滑</string>
+
+    <!-- 抽屉菜单 -->
+    <string name="menu_browse_xiaojiejie">看小姐姐</string>
+    <string name="menu_browse_weather">看天气</string>
+    <string name="menu_browse_news">看资讯</string>
+    <string name="menu_little_tools">小工具</string>
+    <string name="menu_setting">设置</string>
+    <string name="menu_about">关于</string>
+
+    <!-- Working -->
+    <string name="working">前方正在施工&#8230;</string>
+
+</resources>
